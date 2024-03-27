@@ -3,11 +3,22 @@
 #include "bst.h"
 #include "avlbst.h"
 
+
 using namespace std;
 
 
 int main(int argc, char *argv[])
 {
+  BinarySearchTree<uint16_t, uint16_t> testTree;
+  testTree.insert(std::make_pair(1, 9));
+	testTree.insert(std::make_pair(5, 8));
+	testTree.insert(std::make_pair(3, 159));
+  std::cout << testTree.isBalanced() << std::endl;
+  testTree.print();
+
+
+
+    /*
     // Binary Search Tree tests
     BinarySearchTree<char,int> bt;
     bt.insert(std::make_pair('a',1));
@@ -43,6 +54,8 @@ int main(int argc, char *argv[])
     }
     cout << "Erasing b" << endl;
     at.remove('b');
+
+    */
 
     return 0;
 }
