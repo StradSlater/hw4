@@ -516,6 +516,7 @@ void BinarySearchTree<Key, Value>::remove(const Key& key)
         delete removed;
       }
     }
+
     else if (removed->getLeft() == NULL){
       Node<Key, Value>* p = removed->getParent();
       Node<Key, Value>* rc = removed->getRight();
@@ -583,21 +584,10 @@ void BinarySearchTree<Key, Value>::remove(const Key& key)
         }
         delete removed;
       }
-
-      
-      /*
-      if (next->getParent() == NULL){
-        root_ = next;
-      }
-      BinarySearchTree<Key, Value>::remove(removed->getKey());
-      */
+ 
     }
     
-
 }
-
-
-
 
 template<class Key, class Value>
 Node<Key, Value>*
@@ -711,6 +701,8 @@ void BinarySearchTree<Key, Value>::helpClear(Node<Key, Value>* ptr){
     helpClear(ptr->getRight());
     delete ptr;
   }
+
+  root_ = NULL;
 }
 
 
